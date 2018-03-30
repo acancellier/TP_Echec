@@ -11,14 +11,12 @@ package Model;
  */
 public class Echiquier {
     private Case[][] lechiquier;
-    private int ligne=8;
-    private int colonne=8;
     
     public Echiquier(){
-        lechiquier=new Case[ligne][colonne];
+        lechiquier=new Case[8][8];
         
-        for(int ii=0;ii<ligne;ii++){
-            for(int jj=0;jj<colonne;jj++){
+        for(int ii=0;ii<8;ii++){
+            for(int jj=0;jj<8;jj++){
                 
                 lechiquier[ii][jj]=new Case(ii,jj);
                 if(ii==1||ii==6){
@@ -98,8 +96,8 @@ public class Echiquier {
     @Override
     public String toString() {
         String resultat="";
-        for(int ii=0;ii<ligne;ii++){
-            for(int jj=0;jj<colonne;jj++){
+        for(int ii=0;ii<8;ii++){
+            for(int jj=0;jj<8;jj++){
                 Piece test=lechiquier[ii][jj].getPiece();
                 if(test!=null)
                     resultat+=lechiquier[ii][jj].getPiece().toString()+" ";
